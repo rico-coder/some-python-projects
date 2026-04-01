@@ -34,3 +34,30 @@ def pick_choice(choice, balance):
         case _:
             print("Invalid choice.")
             return balance
+
+# Main program
+name = input("Please enter your name: ")
+age = input("Please enter your age: ")
+balance = 0
+
+while True:
+    print("\nSelect action:")
+    print("1: Deposit")
+    print("2: Withdraw")
+    print("3: User Information")
+    print("4: Exit")
+
+    choice = input()
+
+    if choice == "3":
+        get_summary(name, age=age, balace=balance)
+        continue
+
+    balance_or_none = pick_choice(choice, balance)
+
+    if balance_or_none is None:
+        print("Goodbye!")
+        break
+
+    balance = balance_or_none
+    print(f"New balance: {balance}")
