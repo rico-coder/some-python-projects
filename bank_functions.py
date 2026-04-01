@@ -11,3 +11,9 @@ def withdraw(balance, amount):
     if amount > balance:
         raise ValueError("Insufficient funds")
     return balance - amount
+
+# function for information
+def get_summary(owner,**kwargs):
+    print(f"\nAccount Summary for {owner}")
+    for key, value in kwargs.items():
+        print(f"  {key}: {value}")
